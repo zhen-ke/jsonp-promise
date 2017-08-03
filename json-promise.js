@@ -13,7 +13,7 @@
  * jsonp('https://www.ip.net/json/', {units:'si',lang:'zh'}, 5000)
  *
  */
-function jsonp(url, params, timeout) {
+function jsonp(url, params, timeout = 5000) {
   return new Promise(function(resolve, reject) {
     let callbackname = '___JSONP_CALLBACK___' + Date.now() + Math.random().toString().substr(2)
     let script = document.createElement('script')
